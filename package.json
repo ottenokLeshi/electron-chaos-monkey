@@ -1,0 +1,35 @@
+{
+  "name": "electron-chaos-monkey",
+  "version": "0.0.1",
+  "description": "Tool to test the resiliency of electron application",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "npm run build && node .",
+    "prebuild": "rimraf dist",
+    "build": "run-s build:main",
+    "build:main": "tsc -p tsconfig.json"
+  },
+  "author": "ottenokLeshi",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/body-parser": "^1.19.2",
+    "@types/cors": "^2.8.13",
+    "@types/express": "^4.17.15",
+    "@types/node": "^18.11.17",
+    "@typescript-eslint/eslint-plugin": "^5.47.0",
+    "@typescript-eslint/parser": "^5.47.0",
+    "browserify": "^17.0.0",
+    "copyfiles": "^2.4.1",
+    "electron": "13.6.8",
+    "eslint": "^8.30.0",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^3.0.2",
+    "typescript": "4.9.4",
+    "prettier": "^2.8.1"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "cors": "^2.8.5",
+    "express": "^4.18.2"
+  }
+}
