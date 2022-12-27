@@ -10,7 +10,10 @@
 
 # production
 **/build
-/dist
+**/dist
+
+.idea
+.vscode
 
 # misc
 .DS_Store
