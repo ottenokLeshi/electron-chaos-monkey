@@ -1,0 +1,29 @@
+{
+  "name": "electron-exmaple-app",
+  "version": "1.0.0",
+  "description": "Electron sample v13 app",
+  "main": "dist/main.js",
+  "scripts": {
+    "void": "source $HOME/.nvm/nvm.sh; nvm use 14 && which node",
+    "start": "npm run build && electron .",
+    "prebuild": "rimraf dist",
+    "build": "run-s build:main build:copy build:bundle",
+    "build:main": "tsc -p tsconfig.json",
+    "build:bundle": "browserify -e dist/page/renderer.js -o dist/page/renderer.bundle.js",
+    "build:copy": "copyfiles -f src/page/index.html dist/page"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^18.11.18",
+    "browserify": "^17.0.0",
+    "copyfiles": "^2.4.1",
+    "electron": "13.6.8",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^3.0.2",
+    "typescript": "4.9.4"
+  },
+  "dependencies": {
+    "@plexus-interop/client": "^0.19.1"
+  }
+}
